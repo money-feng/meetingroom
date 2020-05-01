@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c8549fa8-ad8b-4d25-b72c-aba406a60afe" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bISUjrQ8Hc0zgOYWJutQXZXuME" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RunManager" selected="Django Server.会议室管理系统">
+    <configuration name="会议室管理系统" type="Python.DjangoServer" factoryName="Django server">
+      <module name="会议室管理系统" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="meetingroomManager.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="meetingroom" type="Python.DjangoServer" factoryName="Django server">
+      <module name="会议室管理系统" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\money\Envs\blog\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8549fa8-ad8b-4d25-b72c-aba406a60afe" name="Default Changelist" comment="" />
+      <created>1588318131183</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588318131183</updated>
+      <workItem from="1588318132438" duration="3816000" />
+      <workItem from="1588321966440" duration="7683000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="721" y="138" key="#Unnamed" timestamp="1588321785550">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="721" y="138" key="#Unnamed/0.0.2048.1112@0.0.2048.1112" timestamp="1588321785550" />
+    <state x="205" y="266" width="1089" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588321817226">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="205" y="266" width="1089" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1588321817226" />
+    <state x="721" y="138" width="605" height="834" key="#meetingroom" timestamp="1588321949253">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="721" y="138" width="605" height="834" key="#meetingroom/0.0.2048.1112@0.0.2048.1112" timestamp="1588321949253" />
+    <state x="804" y="310" key="FileChooserDialogImpl" timestamp="1588321782389">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="804" y="310" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1588321782389" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1588337255285">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1588337255285">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1588337255285">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1588337255285">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
+    <state x="526" y="200" key="SettingsEditor" timestamp="1588321737912">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="526" y="200" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1588321737912" />
+  </component>
+</project>
