@@ -22,7 +22,7 @@ class MeetingRoomInfos(models.Model):
     ROOM_STATUS = (
         (0, '正常'),
         (1, '报修'),
-        (2,'占用'),
+        (2, '占用'),
         (3, '停用')
     )
     RESERVE_STATUS = (
@@ -37,7 +37,7 @@ class MeetingRoomInfos(models.Model):
     add_time = models.DateTimeField(auto_now_add=True, verbose_name='添加时间')
     add_user = models.ForeignKey(user, on_delete=models.DO_NOTHING, verbose_name='添加用户')
     reserve_status = models.PositiveSmallIntegerField(choices=RESERVE_STATUS, default=0, verbose_name='预定状态')
-    image = models.ImageField(upload_to='meetingroom', verbose_name='会议室图片')
+    image = models.ImageField(upload_to='meetingroom', default='liqin.jpg', verbose_name='会议室图片')
 
     class Meta:
         verbose_name = '会议室信息'

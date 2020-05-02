@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8549fa8-ad8b-4d25-b72c-aba406a60afe" name="Default Changelist" comment="" />
+    <list default="true" id="c8549fa8-ad8b-4d25-b72c-aba406a60afe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/会议室管理系统.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/会议室管理系统.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingauth/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingauth/migrations/0002_auto_20200501_1634.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingauth/migrations/0003_auto_20200501_1635.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingauth/migrations/0004_auto_20200501_2036.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingauth/migrations/0005_auto_20200501_2037.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingroom/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingroom/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingroom/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingroom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingroom/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -13,6 +33,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bISUjrQ8Hc0zgOYWJutQXZXuME" />
   <component name="ProjectViewState">
@@ -22,12 +45,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunManager" selected="Django Server.会议室管理系统">
-    <configuration name="会议室管理系统" type="Python.DjangoServer" factoryName="Django server">
+  <component name="RunManager">
+    <configuration name="meetingroom" type="Python.DjangoServer" factoryName="Django server">
       <module name="会议室管理系统" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -36,31 +60,8 @@
         <env name="DJANGO_SETTINGS_MODULE" value="meetingroomManager.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="meetingroom" type="Python.DjangoServer" factoryName="Django server">
-      <module name="会议室管理系统" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\money\Envs\blog\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -87,6 +88,7 @@
       <updated>1588318131183</updated>
       <workItem from="1588318132438" duration="3816000" />
       <workItem from="1588321966440" duration="7683000" />
+      <workItem from="1588340020429" duration="7862000" />
     </task>
     <servers />
   </component>
@@ -98,37 +100,47 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="721" y="138" key="#Unnamed/0.0.2048.1112@0.0.2048.1112" timestamp="1588321785550" />
-    <state x="205" y="266" width="1089" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588321817226">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="144" y="233" width="818" height="543" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588340189685">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="205" y="266" width="1089" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1588321817226" />
+    <state x="144" y="233" width="818" height="543" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1588340189685" />
     <state x="721" y="138" width="605" height="834" key="#meetingroom" timestamp="1588321949253">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="721" y="138" width="605" height="834" key="#meetingroom/0.0.2048.1112@0.0.2048.1112" timestamp="1588321949253" />
+    <state x="408" y="242" key="EnvironmentVariablesDialog" timestamp="1588340180208">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="408" y="242" key="EnvironmentVariablesDialog/0.23.1440.877@0.23.1440.877" timestamp="1588340180208" />
     <state x="804" y="310" key="FileChooserDialogImpl" timestamp="1588321782389">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="804" y="310" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1588321782389" />
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1588337255285">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1588380941781">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="2005" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1588337255285">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588380941781" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1588380941780">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="2005" height="305" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1588337255285">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1588380941779">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="2005" height="305" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1588337255285">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588380941779" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1588380941780">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="2005" height="305" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1588337255285" />
-    <state x="526" y="200" key="SettingsEditor" timestamp="1588321737912">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
+    <state x="370" y="178" key="SettingsEditor" timestamp="1588340543234">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="526" y="200" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1588321737912" />
+    <state x="370" y="178" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1588340543234" />
   </component>
 </project>
