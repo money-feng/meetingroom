@@ -34,3 +34,26 @@ class UserProfile(AbstractUser):
 
     def __str__(self):
         return self.username
+
+    @property
+    def department_name(self):
+        return self.department.department_name
+
+class MenuList(models.Model):
+    """菜单"""
+    name = models.CharField(max_length=20, verbose_name='名称')
+    path = models.CharField(max_length=20, default='', verbose_name='路由')
+    parent = models.ForeignKey('MenuList', on_delete=models.CASCADE,
+    related_name='parentlevel', null=True, blank=True, verbose_name='上级菜单')
+    style = models.CharField(max_length=20, default='el-icon-menu', verbose_name='样式')
+
+    class Meta:
+        verbose_name = '菜单'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def children(self):
+        return self.parentlevel.all().values('id', 'name', 'path', 'style')
