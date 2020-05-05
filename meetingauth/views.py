@@ -7,13 +7,15 @@ from rest_framework_jwt.serializers import jwt_payload_handler
 from rest_framework_jwt.serializers import jwt_encode_handler
 
 from . import models
-from .serializers import MenuListModelSerializer, UserProfileModelSerializer
+from .serializers import PermissionModelSerializer, UserProfileModelSerializer, RolesModelSerializer
 # Create your views here.
 
 
 class UserInfosAPIView(APIView):
+    """操作用户的view"""
     def get(self, request, *args, **kwargs):
-        query = kwargs.get('name')
+        """获取全部或者部分用户"""
+        query = kwargs.get('query')
         if query:
             users = models.UserProfile.objects.filter(name__contains=query)
         else:
@@ -25,8 +27,21 @@ class UserInfosAPIView(APIView):
             'data': serializer_users.data
         })
 
+    def post(self, request, *args, **kwargs):
+        """添加用户信息"""
+        data = request.data
+        serializer_user = UserProfileModelSerializer(data=data)
+        serializer_user.is_valid()
+        user= serializer_user.save()
+        return Response({
+            "status": 201,
+            "message": "添加用户完成",
+            "data": UserProfileModelSerializer(user).data
+        })
+
     def patch(self, request, *args, **kwargs):
-        userid = kwargs.get('id')
+        """更新用户，部分更新"""
+        userid = kwargs.get('query')
         user = models.UserProfile.objects.filter(id=userid).first()
         if not (userid and user):
             return Response({
@@ -42,6 +57,21 @@ class UserInfosAPIView(APIView):
             'date': UserProfileModelSerializer(updated_user).data
         })
 
+    def delete(self, request, *args, **kwargs):
+        """删除用户"""
+        userid = kwargs.get('query')
+        user = models.UserProfile.objects.filter(id=userid).first()
+        if not (userid and user):
+            return Response({
+                'status': 400,
+                'message': "请求不正确"
+            })
+        user.delete()
+        return Response({
+            'status': 200,
+            'message': "删除用户信息成功",
+            'date': ""
+        })
 
 
 class LoginAPIView(APIView):
@@ -65,12 +95,52 @@ class LoginAPIView(APIView):
                 'status': 400,
             })
 
-class MenuListAPIView(APIView):
+class PermissionPIView(APIView):
     def get(self, request, *args, **kwargs):
-        menus = models.MenuList.objects.filter(parent__isnull=True)
-        serializer_data = MenuListModelSerializer(menus, many=True)
+        type = request.query_params.get('type')
+        if type == 'list':
+            perms = models.Permission.objects.all().values()
+            return Response({
+                'status': 200,
+                'message': "获取菜单成功",
+                'data': perms
+            })
+        perms = models.Permission.objects.filter(level=0)
+        serializer_data = PermissionModelSerializer(perms, many=True)
         return Response({
             'status': 200,
             'message': "获取菜单成功",
             'data': serializer_data.data
+        })
+
+
+class RolsAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        roles = models.Roles.objects.all()
+        serializer_roles = RolesModelSerializer(roles, many=True)
+        return Response({
+            'status': 200,
+            'message': "获取角色成功",
+            'data': serializer_roles.data
+        })
+
+    def delete(self, request, *args, **kwargs):
+        roleid = kwargs.get('query')
+        permid = request.data.get('permid')
+        print(permid)
+        role = models.Roles.objects.filter(id=roleid).first()
+        perm = models.Permission.objects.filter(id=permid).first()
+        if not (role and perm):
+            return Response({
+                'status': 400,
+                'message': "请求不正确",
+                'data': ''
+            })
+        print(role.permissions.all())
+        # roles = models.Roles.objects.all()
+        # serializer_roles = RolesModelSerializer(roles, many=True)
+        return Response({
+            'status': 200,
+            'message': "删除角色成功",
+            'data': 1
         })

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserProfile, Department, MenuList
+from .models import UserProfile, Department, Permission, Roles
 # Register your models here.
 
 
@@ -13,6 +13,11 @@ class DepartmentAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(MenuList)
-class MenuListAdmin(admin.ModelAdmin):
+@admin.register(Permission)
+class PermissionAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Roles)
+class RolesAdmin(admin.ModelAdmin):
     pass

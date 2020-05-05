@@ -7,7 +7,7 @@ from meetingauth.models import UserProfile
 class MeetingRoomSerializer(ModelSerializer):
     class Meta:
         model = models.MeetingRoomInfos
-        fields = ['name', 'site', 'nums', 'equipment_name', 'room_status',
+        fields = ['id', 'name', 'site', 'nums', 'equipment_name', 'room_status',
                   'add_time', 'manager', 'add_user', 'image'
                   ]
         extra_kwargs = {

@@ -72,6 +72,24 @@ class MeetingRecordsApiView(APIView):
     """处理会议室申请"""
     def get(self, request, *args, **kwargs):
         """查看申请记录"""
+        roomid = request.query_params.get('roomid')
+        reserve = models.MeetRoomReserve.objects.filter(name_id=roomid)
+        if roomid and not reserve:
+            return Response({
+                'status': 200,
+                'message': '查询会议室预定记录成功',
+                'data': ''
+            })
+        if reserve:
+            data = reserve.values_list('begin_datetime', flat=True)
+            data_date = [item.date() for item in data]
+            serializer_data = MeetingReserveSerializer(reserve, many=True)
+            res = {'date': data_date, 'infos': serializer_data.data}
+            return Response({
+                'status': 200,
+                'message': '查询会议室预定记录成功',
+                'data': res
+            })
         reserves = models.MeetRoomReserve.objects.all()
         serializer_reserves = MeetingReserveSerializer(reserves, many=True)
         data = serializer_reserves.data

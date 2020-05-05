@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c8549fa8-ad8b-4d25-b72c-aba406a60afe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c3713314-fe41-4e37-8d8c-10ceb4c933a8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c3713314-fe41-4e37-8d8c-10ceb4c933a8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/会议室管理系统.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/会议室管理系统.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/meetingroom/liqin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/meetingroom/liqin_81zh0cK.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/meetingroom/liqin_JXjEAAe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/meetingroom/liqin_lOCg83T.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingauth/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingauth/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingauth/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingauth/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingauth/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingauth/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingauth/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingauth/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingauth/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingauth/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetingroom/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroom/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroom/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetingroom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroom/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetingroomManager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroomManager/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroomManager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroomManager/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,12 +108,26 @@
       <workItem from="1588321966440" duration="7683000" />
       <workItem from="1588340020429" duration="7862000" />
       <workItem from="1588390425331" duration="17510000" />
-      <workItem from="1588476794751" duration="13557000" />
+      <workItem from="1588476794751" duration="14445000" />
+      <workItem from="1588561223267" duration="19822000" />
+      <workItem from="1588664136307" duration="5197000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="721" y="138" key="#Unnamed" timestamp="1588321785550">
@@ -118,25 +151,25 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="804" y="310" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1588321782389" />
-    <state width="2005" height="211" key="GridCell.Tab.0.bottom" timestamp="1588512164742">
+    <state width="1990" height="211" key="GridCell.Tab.0.bottom" timestamp="1588596470437">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="211" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1588512164742" />
+    <state width="1990" height="211" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588380941781" />
-    <state width="2005" height="211" key="GridCell.Tab.0.center" timestamp="1588512164741">
+    <state width="1990" height="211" key="GridCell.Tab.0.center" timestamp="1588596470437">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="211" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1588512164741" />
+    <state width="1990" height="211" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
-    <state width="2005" height="211" key="GridCell.Tab.0.left" timestamp="1588512164741">
+    <state width="1990" height="211" key="GridCell.Tab.0.left" timestamp="1588596470437">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="211" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1588512164741" />
+    <state width="1990" height="211" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588380941779" />
-    <state width="2005" height="211" key="GridCell.Tab.0.right" timestamp="1588512164742">
+    <state width="1990" height="211" key="GridCell.Tab.0.right" timestamp="1588596470437">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="211" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1588512164742" />
+    <state width="1990" height="211" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
     <state x="526" y="200" key="SettingsEditor" timestamp="1588393322233">
       <screen x="0" y="0" width="2048" height="1112" />

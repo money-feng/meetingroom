@@ -32,7 +32,7 @@ class MeetingRoomInfos(models.Model):
     status = models.PositiveSmallIntegerField(choices=ROOM_STATUS, default=0, verbose_name='状态')
     add_time = models.DateTimeField(auto_now_add=True, verbose_name='添加时间')
     add_user = models.ForeignKey(user, on_delete=models.DO_NOTHING, verbose_name='添加用户')
-    image = models.ImageField(upload_to='meetingroom', default='liqin.jpg', verbose_name='会议室图片')
+    image = models.ImageField(upload_to='meetingroom/', default='liqin.jpg', verbose_name='会议室图片')
 
     class Meta:
         verbose_name = '会议室信息'

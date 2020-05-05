@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import re_path
+from django.views.static import serve
+from . import settings
+
 
 from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('meetingroom.urls')),
-    path('auth/', include('meetingauth.urls'))
+    path('auth/', include('meetingauth.urls')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
