@@ -82,9 +82,14 @@ class MeetingRecordsApiView(APIView):
             })
         if reserve:
             data = reserve.values_list('begin_datetime', flat=True)
-            data_date = [item.date() for item in data]
-            serializer_data = MeetingReserveSerializer(reserve, many=True)
-            res = {'date': data_date, 'infos': serializer_data.data}
+            data_date = set(item for item in data)
+            infos = {}
+            date_infos = []
+            for date in data_date:
+                date_infos.append(date.date())
+                serializer_data = MeetingReserveSerializer(reserve.filter(begin_datetime__date=date.date()), many=True)
+                infos.setdefault(str(date.date()), serializer_data.data)
+            res = {'date': date_infos, 'infos': infos}
             return Response({
                 'status': 200,
                 'message': '查询会议室预定记录成功',
