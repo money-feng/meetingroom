@@ -53,19 +53,24 @@ class MeetingReserveSerializer(ModelSerializer):
                 'read_only': True
             }
         }
+
     def validate(self, attrs):
 
         # 获取登录用户，也就是预定会议室的用户
+
         # chair = self.context['request'].user
         chair = UserProfile.objects.get(id=1)
+        print(self.context['request'].data.get('participants'))
+        participants = UserProfile.objects.filter(pk__in=self.context['request'].data.get('participants').split(','))
         # 获取同一个会议室，在预定的开始结束，时间之内是否有记录，判断是否可以申请
         begin_datetime = attrs.get('begin_datetime')
         over_datetime = attrs.get('over_datetime')
+
         room = attrs.get('name')
         if models.MeetRoomReserve.objects.filter(name=room,
         over_datetime__in=[begin_datetime, over_datetime ]).exclude(status=3).exists():
             raise ValidationError("已经存在预定")
         # 更新attrs数据
         attrs.update({'chair': chair})
-
+        attrs.update({'participants': participants})
         return attrs

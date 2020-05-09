@@ -1,3 +1,5 @@
+import copy
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -106,19 +108,22 @@ class MeetingRecordsApiView(APIView):
     def post(self, request, *args, **kwargs):
         """发起一条预定"""
         data = request.data
-        room_id = data.get('id')
+        room_id = data.get('name')
         room = models.MeetingRoomInfos.objects.filter(id=room_id).first()
         if not room_id or not room:
             return Response({
-                'message': "会议室预定",
+                'status': 400,
+                'message': "会议室预定失败",
                 'data': '请求不正确'
             })
-        data.update({'name': room})
+        # data.update({'participants': data.get('participants').split(',')})
         reserveSerializer = MeetingReserveSerializer(data=data, context={'request': request})
+
         reserveSerializer.is_valid(raise_exception=True)
         reserve = reserveSerializer.save()
         return Response({
-            'message': "会议室预定",
+            'status': 200,
+            'message': "会议室预定成功",
             'data': MeetingReserveSerializer(reserve).data
         })
 
