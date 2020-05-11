@@ -43,7 +43,7 @@ class MeetingRoomInfos(models.Model):
 
     @property
     def equipment_name(self):
-        return ', '.join([equipment.name for equipment in self.equipment.all()])
+        return self.equipment.values_list('name', flat=True)
 
     @property
     def room_status(self):

@@ -2,8 +2,10 @@ import copy
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.exceptions import ValidationError
 
 from . import models
+from meetingauth.models import UserProfile
 from .serializers import MeetingRoomSerializer, MeetingReserveSerializer
 # Create your views here.
 
@@ -18,11 +20,11 @@ class MeetingRoomApiView(APIView):
         else:
             rooms = models.MeetingRoomInfos.objects.filter(status=0)
         if not rooms.exists():
-            return Response({"message": "请求错误"})
+            return Response({"message": "请求错误", 'status': 400, 'data': ''})
         rooms_serializer = MeetingRoomSerializer(rooms, many=True)
         return Response({
             'status': 200,
-            'message': 'success',
+            'message': '获取会议室信息成功',
             'data': rooms_serializer.data
         })
 
@@ -74,12 +76,12 @@ class MeetingRecordsApiView(APIView):
     """处理会议室申请"""
     def get(self, request, *args, **kwargs):
         """查看申请记录"""
-        roomid = request.query_params.get('roomid')
-        reserve = models.MeetRoomReserve.objects.filter(name_id=roomid)
+        roomid = kwargs.get('id')
+        reserve = models.MeetRoomReserve.objects.filter(name_id=roomid, status__in=[0, 2])
         if roomid and not reserve:
             return Response({
                 'status': 200,
-                'message': '查询会议室预定记录成功',
+                'message': '暂无预订记录',
                 'data': ''
             })
         if reserve:
@@ -89,7 +91,7 @@ class MeetingRecordsApiView(APIView):
             date_infos = []
             for date in data_date:
                 date_infos.append(date.date())
-                serializer_data = MeetingReserveSerializer(reserve.filter(begin_datetime__date=date.date()), many=True)
+                serializer_data = MeetingReserveSerializer(reserve.filter(begin_datetime__date=date.date()),  many=True)
                 infos.setdefault(str(date.date()), serializer_data.data)
             res = {'date': date_infos, 'infos': infos}
             return Response({
@@ -102,7 +104,8 @@ class MeetingRecordsApiView(APIView):
         data = serializer_reserves.data
         return Response({
             'message': "查询会议室预定记录",
-            'data': data
+            'data': data,
+            'status': 200
         })
 
     def post(self, request, *args, **kwargs):
@@ -117,6 +120,21 @@ class MeetingRecordsApiView(APIView):
                 'data': '请求不正确'
             })
         # data.update({'participants': data.get('participants').split(',')})
+        chair = UserProfile.objects.get(id=1)
+
+        participants = UserProfile.objects.filter(pk__in=data.get('participants').split(','))
+        # 获取同一个会议室，在预定的开始结束，时间之内是否有记录，判断是否可以申请
+        begin_datetime = data.get('begin_datetime')
+        over_datetime = data.get('over_datetime')
+
+        room = data.get('name')
+        if models.MeetRoomReserve.objects.filter(name=room,
+                                                 over_datetime__in=[begin_datetime, over_datetime]).exclude(
+            status=3).exists():
+            raise ValidationError("已经存在预定")
+        # 更新attrs数据
+        data.update({'chair': chair})
+        data.update({'participants': participants})
         reserveSerializer = MeetingReserveSerializer(data=data, context={'request': request})
 
         reserveSerializer.is_valid(raise_exception=True)
@@ -134,15 +152,16 @@ class MeetingRecordsApiView(APIView):
         data = request.data
         # patch操作只处理状态更新,其他更新方式使用put
         if not reserve or len(data) != 1 or not data.get('status'):
-            return Response({'message': '预定更新', 'data': "请求不正确"})
+            return Response({'message': '操作失败，请求不正确', 'data': "请求不正确", 'status': 400})
         # 反序列化reserve， partial=True允许局部更新
         reserve_serializer = MeetingReserveSerializer(reserve, data=data, partial=True)
         reserve_serializer.is_valid(raise_exception=True)
         reserve_data = reserve_serializer.save()
 
         return Response({
-            'message': "预定更新",
-            'data': MeetingReserveSerializer(reserve_data).data
+            'message': "申请已通过",
+            'data': MeetingReserveSerializer(reserve_data).data,
+            'status': 200
         })
 
     def put(self, request, *args, **kwargs):
