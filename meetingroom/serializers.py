@@ -30,6 +30,7 @@ class MeetingRoomSerializer(ModelSerializer):
             'name': attrs.get('name'),
             'site': attrs.get('site')
         }
+        print(111111111111)
         if models.MeetingRoomInfos.objects.filter(**kwargs).exclude(status=3).exists():
             raise ValidationError('会议室已经存在')
         return attrs

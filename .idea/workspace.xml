@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8549fa8-ad8b-4d25-b72c-aba406a60afe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/会议室管理系统.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/会议室管理系统.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetingroom/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroom/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroom/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/views.py" afterDir="false" />
     </list>
@@ -66,7 +67,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="meetingroomManager.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\money\Envs\ywsys\Scripts\python.exe" />
+      <option name="SDK_HOME" value="$USER_HOME$/workspace/blog/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -103,6 +104,8 @@
       <workItem from="1588733075087" duration="17465000" />
       <workItem from="1589011893236" duration="1397000" />
       <workItem from="1589164303928" duration="6935000" />
+      <workItem from="1589200506740" duration="56000" />
+      <workItem from="1589200632674" duration="3091000" />
     </task>
     <servers />
   </component>
@@ -131,11 +134,12 @@
     </state>
     <state x="205" y="266" width="1089" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1588321817226" />
     <state x="144" y="233" width="818" height="543" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1588340189685" />
-    <state x="901" y="175" width="605" height="834" key="#meetingroom" timestamp="1588733221451">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state x="901" y="199" width="611" height="839" key="#meetingroom" timestamp="1589200686355">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="721" y="138" width="605" height="834" key="#meetingroom/0.0.2048.1112@0.0.2048.1112" timestamp="1588321949253" />
     <state x="901" y="175" key="#meetingroom/0.0.2560.1410@0.0.2560.1410" timestamp="1588733221451" />
+    <state x="901" y="199" width="611" height="839" key="#meetingroom/0.23.2560.1417@0.23.2560.1417" timestamp="1589200686355" />
     <state x="408" y="242" key="EnvironmentVariablesDialog" timestamp="1588340180208">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -145,39 +149,44 @@
     </state>
     <state x="804" y="310" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1588321782389" />
     <state x="1005" y="393" key="FileChooserDialogImpl/0.0.2560.1410@0.0.2560.1410" timestamp="1588842352600" />
-    <state width="2517" height="242" key="GridCell.Tab.0.bottom" timestamp="1589177100921">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2518" height="184" key="GridCell.Tab.0.bottom" timestamp="1589204118518">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.bottom/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552070" />
     <state width="2517" height="242" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100921" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588380941781" />
-    <state width="2517" height="242" key="GridCell.Tab.0.center" timestamp="1589177100920">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2518" height="184" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118518" />
+    <state width="2518" height="184" key="GridCell.Tab.0.center" timestamp="1589204118517">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.center/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552070" />
     <state width="2517" height="242" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100920" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
-    <state width="2517" height="242" key="GridCell.Tab.0.left" timestamp="1589177100920">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2518" height="184" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118517" />
+    <state width="2518" height="184" key="GridCell.Tab.0.left" timestamp="1589204118516">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.left/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552069" />
     <state width="2517" height="242" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100920" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588380941779" />
-    <state width="2517" height="242" key="GridCell.Tab.0.right" timestamp="1589177100921">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2518" height="184" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118516" />
+    <state width="2518" height="184" key="GridCell.Tab.0.right" timestamp="1589204118517">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.right/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552070" />
     <state width="2517" height="242" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100921" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
-    <state x="658" y="254" key="SettingsEditor" timestamp="1588737328647">
-      <screen x="0" y="0" width="2560" height="1410" />
+    <state width="2518" height="184" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118517" />
+    <state x="658" y="278" key="SettingsEditor" timestamp="1589203835989">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="526" y="200" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1588393322233" />
     <state x="658" y="254" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1588737328647" />
     <state x="370" y="178" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1588340543234" />
+    <state x="658" y="278" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1589203835989" />
   </component>
 </project>
