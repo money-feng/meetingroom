@@ -24,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/会议室管理系统.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/会议室管理系统.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingroom/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroom/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetingroom/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetingroom/views.py" afterDir="false" />
     </list>
@@ -67,9 +68,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="meetingroomManager.settings" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/workspace/blog/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -106,6 +107,7 @@
       <workItem from="1589164303928" duration="6935000" />
       <workItem from="1589200506740" duration="56000" />
       <workItem from="1589200632674" duration="3091000" />
+      <workItem from="1589251639429" duration="17812000" />
     </task>
     <servers />
   </component>
@@ -134,59 +136,103 @@
     </state>
     <state x="205" y="266" width="1089" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1588321817226" />
     <state x="144" y="233" width="818" height="543" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1588340189685" />
-    <state x="901" y="199" width="611" height="839" key="#meetingroom" timestamp="1589200686355">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="901" y="175" width="611" height="839" key="#meetingroom" timestamp="1589253170913">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="721" y="138" width="605" height="834" key="#meetingroom/0.0.2048.1112@0.0.2048.1112" timestamp="1588321949253" />
-    <state x="901" y="175" key="#meetingroom/0.0.2560.1410@0.0.2560.1410" timestamp="1588733221451" />
+    <state x="901" y="175" key="#meetingroom/0.0.2560.1410@0.0.2560.1410" timestamp="1589253170913" />
     <state x="901" y="199" width="611" height="839" key="#meetingroom/0.23.2560.1417@0.23.2560.1417" timestamp="1589200686355" />
-    <state x="408" y="242" key="EnvironmentVariablesDialog" timestamp="1588340180208">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1824" height="466" key="DebuggerActiveHint" timestamp="1589268197363">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
+    <state width="1824" height="466" key="DebuggerActiveHint/0.0.2560.1410@0.0.2560.1410" timestamp="1589268197363" />
+    <state x="725" y="352" key="EnvironmentVariablesDialog" timestamp="1589253166540">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="725" y="352" key="EnvironmentVariablesDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1589253166540" />
     <state x="408" y="242" key="EnvironmentVariablesDialog/0.23.1440.877@0.23.1440.877" timestamp="1588340180208" />
     <state x="1005" y="393" key="FileChooserDialogImpl" timestamp="1588842352600">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="804" y="310" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1588321782389" />
     <state x="1005" y="393" key="FileChooserDialogImpl/0.0.2560.1410@0.0.2560.1410" timestamp="1588842352600" />
-    <state width="2518" height="184" key="GridCell.Tab.0.bottom" timestamp="1589204118518">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2517" height="531" key="GridCell.Tab.0.bottom" timestamp="1589269926858">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.bottom/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552070" />
-    <state width="2517" height="242" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100921" />
+    <state width="2517" height="531" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926858" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1588380941781" />
     <state width="2518" height="184" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118518" />
-    <state width="2518" height="184" key="GridCell.Tab.0.center" timestamp="1589204118517">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2517" height="531" key="GridCell.Tab.0.center" timestamp="1589269926858">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.center/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552070" />
-    <state width="2517" height="242" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100920" />
+    <state width="2517" height="531" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926858" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
     <state width="2518" height="184" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118517" />
-    <state width="2518" height="184" key="GridCell.Tab.0.left" timestamp="1589204118516">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2517" height="531" key="GridCell.Tab.0.left" timestamp="1589269926858">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.left/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552069" />
-    <state width="2517" height="242" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100920" />
+    <state width="2517" height="531" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926858" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1588380941779" />
     <state width="2518" height="184" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118516" />
-    <state width="2518" height="184" key="GridCell.Tab.0.right" timestamp="1589204118517">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2517" height="531" key="GridCell.Tab.0.right" timestamp="1589269926858">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1990" height="211" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1588596470437" />
     <state width="2517" height="242" key="GridCell.Tab.0.right/0.0.2048.1122@0.0.2048.1122" timestamp="1589027552070" />
-    <state width="2517" height="242" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1589177100921" />
+    <state width="2517" height="531" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926858" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1588380941780" />
     <state width="2518" height="184" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1589204118517" />
-    <state x="658" y="278" key="SettingsEditor" timestamp="1589203835989">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2517" height="531" key="GridCell.Tab.1.bottom" timestamp="1589269926874">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="531" key="GridCell.Tab.1.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926874" />
+    <state width="2517" height="531" key="GridCell.Tab.1.center" timestamp="1589269926858">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="531" key="GridCell.Tab.1.center/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926858" />
+    <state width="2517" height="531" key="GridCell.Tab.1.left" timestamp="1589269926858">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="531" key="GridCell.Tab.1.left/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926858" />
+    <state width="2517" height="531" key="GridCell.Tab.1.right" timestamp="1589269926858">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2517" height="531" key="GridCell.Tab.1.right/0.0.2560.1410@0.0.2560.1410" timestamp="1589269926858" />
+    <state x="658" y="254" key="SettingsEditor" timestamp="1589253214777">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="526" y="200" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1588393322233" />
-    <state x="658" y="254" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1588737328647" />
+    <state x="658" y="254" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1589253214777" />
     <state x="370" y="178" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1588340543234" />
     <state x="658" y="278" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1589203835989" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/meetingroom/views.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/Envs/ywsys/Lib/site-packages/rest_framework/serializers.py</url>
+          <line>220</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

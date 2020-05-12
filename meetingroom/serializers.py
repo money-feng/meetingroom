@@ -7,7 +7,7 @@ from . import models
 class MeetingRoomSerializer(ModelSerializer):
     class Meta:
         model = models.MeetingRoomInfos
-        fields = ['id', 'name', 'site', 'nums', 'equipment_name', 'room_status',
+        fields = ['id', 'name', 'site', 'nums', 'equipment', 'equipment_name', 'room_status', 'status',
                   'add_time', 'manager', 'add_user', 'image'
                   ]
         extra_kwargs = {
@@ -22,18 +22,21 @@ class MeetingRoomSerializer(ModelSerializer):
             },
             'add_user': {
                 'write_only': True
+            },
+            'equipment': {
+                'write_only': True
             }
         }
 
-    def validate(self, attrs):
+    def create(self, validated_data):
         kwargs = {
-            'name': attrs.get('name'),
-            'site': attrs.get('site')
+            'name': validated_data.get('name'),
+            'site': validated_data.get('site')
         }
-        print(111111111111)
         if models.MeetingRoomInfos.objects.filter(**kwargs).exclude(status=3).exists():
             raise ValidationError('会议室已经存在')
-        return attrs
+        return models.MeetingRoomInfos.objects.create(**kwargs)
+
 
 
 class MeetingReserveSerializer(ModelSerializer):

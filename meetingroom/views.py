@@ -1,40 +1,36 @@
-import copy
-import json
-import codecs
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.exceptions import ValidationError, ParseError
-from rest_framework.parsers import BaseParser
-from rest_framework import renderers
-from rest_framework.settings import api_settings
-from rest_framework import settings
+from rest_framework.exceptions import ValidationError
+from rest_framework.parsers import FormParser
+
 
 from . import models
 from meetingauth.models import UserProfile
 from .serializers import MeetingRoomSerializer, MeetingReserveSerializer
 # Create your views here.
 
-class TestParser(BaseParser):
-    media_type = 'application/x-www-form-urlencoded'
-    renderer_class = renderers.JSONRenderer
-    strict = api_settings.STRICT_JSON
+
+class RoomFormParser(FormParser):
 
     def parse(self, stream, media_type=None, parser_context=None):
-        """
-        Parses the incoming bytestream as JSON and returns the resulting data.
-        """
-        parser_context = parser_context or {}
-        encoding = parser_context.get('encoding', settings.DEFAULT_CHARSET)
 
-        try:
-            decoded_stream = codecs.getreader(encoding)(stream)
-            parse_constant = json.strict_constant if self.strict else None
-            return json.load(decoded_stream, parse_constant=parse_constant)
-        except ValueError as exc:
-            raise ParseError('JSON parse error - %s' % str(exc))
+        data = super(RoomFormParser, self).parse(stream, media_type=None, parser_context=None)
+
+        del_id = data.get('needDel')
+        if del_id:
+            del_key = 'equipment_name[{}]'.format(del_id[0])
+            del data[del_key]
+            equipment_name = []
+            for key in data.keys():
+                if key.startwith('equipment_name'):
+                    equipment_name.append(data[key])
+        data['equipment_name'] = equipment_name
+        print(data)
 
 class MeetingRoomApiView(APIView):
-    parser_classes = [TestParser]
+
+
     def get(self, request, *args, **kwargs):
         """获取所有可用会议室或单个会议室"""
         meeting_room_id = kwargs.get('id')
@@ -63,28 +59,9 @@ class MeetingRoomApiView(APIView):
             'data': MeetingRoomSerializer(room).data
         })
 
-    def patch(self, request, *args, **kwargs):
-        """更新一条数据"""
-        meeting_room_id = kwargs.get('id')
-        data = request.data
-        meeting_room = models.MeetingRoomInfos.objects.filter(pk=meeting_room_id).first()
-        if not meeting_room_id or not data or not meeting_room:
-            return Response({
-                "message": "修改会议室",
-                "data": "请求不正确"
-            })
-        rooms_serializer = MeetingRoomSerializer(meeting_room, data=data, partial=True)
-        rooms_serializer.is_valid()
-        room = rooms_serializer.save()
-        return Response({
-            'message': '修改会议室',
-            'data': MeetingRoomSerializer(room).data
-        })
-
     def put(self, request, *args, **kwargs):
         meeting_room_id = kwargs.get('id')
-        print(meeting_room_id)
-        data = ""
+        data = request.data.copy()
         meeting_room = models.MeetingRoomInfos.objects.filter(pk=meeting_room_id).first()
         if not meeting_room_id or not data or not meeting_room:
             return Response({
@@ -92,8 +69,11 @@ class MeetingRoomApiView(APIView):
                 "data": "",
                 'status': 400
             })
+
+        data['add_user'] = 1
+        data['equipment'] = [equipment['id'] for equipment in data.get('equipment_name')]
         rooms_serializer = MeetingRoomSerializer(meeting_room, data=data, partial=True)
-        rooms_serializer.is_valid()
+        rooms_serializer.is_valid(raise_exception=True)
         room = rooms_serializer.save()
         return Response({
             'message': '修改会议室信息成功',
