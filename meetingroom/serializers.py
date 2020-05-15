@@ -3,6 +3,10 @@ from rest_framework.serializers import ModelSerializer
 
 from . import models
 
+class MeetingRoomEquipmentSerializer(ModelSerializer):
+    class Meta:
+        model = models.MeetingRoomEquipment
+        fields = '__all__'
 
 class MeetingRoomSerializer(ModelSerializer):
     class Meta:
@@ -28,6 +32,7 @@ class MeetingRoomSerializer(ModelSerializer):
             }
         }
 
+
     def create(self, validated_data):
         kwargs = {
             'name': validated_data.get('name'),
@@ -36,6 +41,15 @@ class MeetingRoomSerializer(ModelSerializer):
         if models.MeetingRoomInfos.objects.filter(**kwargs).exclude(status=3).exists():
             raise ValidationError('会议室已经存在')
         return models.MeetingRoomInfos.objects.create(**kwargs)
+
+    def update(self, instance, validated_data):
+        # 将多对多类型的字段先取出来
+        equipment = validated_data.pop('equipment')
+        for key, value in validated_data.items():
+            setattr(instance, key, value)
+        instance.equipment.set(equipment)
+        instance.save()
+        return instance
 
 
 

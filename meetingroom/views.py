@@ -1,36 +1,17 @@
-
+import re
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
-from rest_framework.parsers import FormParser
+
 
 
 from . import models
 from meetingauth.models import UserProfile
-from .serializers import MeetingRoomSerializer, MeetingReserveSerializer
+from .serializers import MeetingRoomSerializer, MeetingReserveSerializer, MeetingRoomEquipmentSerializer
 # Create your views here.
 
 
-class RoomFormParser(FormParser):
-
-    def parse(self, stream, media_type=None, parser_context=None):
-
-        data = super(RoomFormParser, self).parse(stream, media_type=None, parser_context=None)
-
-        del_id = data.get('needDel')
-        if del_id:
-            del_key = 'equipment_name[{}]'.format(del_id[0])
-            del data[del_key]
-            equipment_name = []
-            for key in data.keys():
-                if key.startwith('equipment_name'):
-                    equipment_name.append(data[key])
-        data['equipment_name'] = equipment_name
-        print(data)
-
 class MeetingRoomApiView(APIView):
-
-
     def get(self, request, *args, **kwargs):
         """获取所有可用会议室或单个会议室"""
         meeting_room_id = kwargs.get('id')
@@ -69,11 +50,19 @@ class MeetingRoomApiView(APIView):
                 "data": "",
                 'status': 400
             })
-
+        del data['image']
         data['add_user'] = 1
-        data['equipment'] = [equipment['id'] for equipment in data.get('equipment_name')]
+
+        regex = re.compile(r'^equipment\[(\d+)\]\[(\w+)\]')
+        for item, value in request.data.items():
+            match = re.match(regex, item)
+            if match:
+                index, key = match.groups()
+                if key == 'id':
+                    data.update({'equipment': value})
+
         rooms_serializer = MeetingRoomSerializer(meeting_room, data=data, partial=True)
-        rooms_serializer.is_valid(raise_exception=True)
+        rooms_serializer.is_valid()
         room = rooms_serializer.save()
         return Response({
             'message': '修改会议室信息成功',
@@ -214,4 +203,53 @@ class MeetingRecordsApiView(APIView):
         return Response({
             "message": "预定删除",
             "data": "删除完成"
+        })
+
+class EquipmentAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        name = request.query_params.get('name')
+        if name:
+            equipments = models.MeetingRoomEquipment.objects.filter(name__icontains=name)
+        else:
+            equipments = models.MeetingRoomEquipment.objects.all()
+        serializer_equipments = MeetingRoomEquipmentSerializer(equipments, many=True)
+        return Response({
+            'status': 200,
+            'message': "获取设备信息成功",
+            'data': serializer_equipments.data
+        })
+
+    def post(self, request, *args, **kwargs):
+        data = request.data
+        if models.MeetingRoomEquipment.objects.filter(name=data.get('name')).exists():
+            return Response({
+                "message": "同名设备已经存在",
+                "status": 400,
+                "data": ''
+            })
+        print(data)
+        serializer_equipment = MeetingRoomEquipmentSerializer(data=data)
+        serializer_equipment.is_valid()
+        serializer_equipment.save()
+        data = MeetingRoomEquipmentSerializer(models.MeetingRoomEquipment.objects.all(), many=True)
+        return Response({
+            'message': "设备添加成功",
+            "status": 200,
+            "data": data.data
+        })
+
+    def delete(self, request, *args, **kwargs):
+        id = request.data.get('id')
+        equipment = models.MeetingRoomEquipment.objects.filter(id=id).first()
+        if not (id and equipment):
+            return Response({
+                "message": "设备不存在",
+                "status": 400,
+                "data": ''
+            })
+        equipment.delete()
+        return Response({
+            "message": "设备删除完成",
+            "status": 200,
+            "data": MeetingRoomEquipmentSerializer(models.MeetingRoomEquipment.objects.all(), many=True).data
         })

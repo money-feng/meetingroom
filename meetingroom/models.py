@@ -8,6 +8,8 @@ user = get_user_model()
 class MeetingRoomEquipment(models.Model):
     """会议室设备"""
     name = models.CharField(max_length=50, verbose_name='设备名称')
+    infos = models.CharField(max_length=100, default='', verbose_name='设备描述')
+    add_datetime = models.DateTimeField(auto_now_add=True, verbose_name='添加时间')
 
     class Meta:
         verbose_name = '会议室设备'
