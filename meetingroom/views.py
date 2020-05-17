@@ -238,8 +238,29 @@ class EquipmentAPIView(APIView):
             "data": data.data
         })
 
+    def put(self, request, *args, **kwargs):
+        id = kwargs.get('id')
+        data = request.data.copy()
+        data.update({'infos': data.get('origin_infos')})
+        equipment = models.MeetingRoomEquipment.objects.filter(id=id).first()
+        if not (id and data and equipment):
+            return Response({
+                "message": "请求异常",
+                "status": 400,
+                "data": ''
+            })
+        serializer_equipment = MeetingRoomEquipmentSerializer(equipment, data=data)
+        serializer_equipment.is_valid()
+        serializer_equipment.save()
+        return Response({
+            "message": "设备信息更新完成",
+            "status": 200,
+            "data": MeetingRoomEquipmentSerializer(models.MeetingRoomEquipment.objects.all(), many=True).data
+        })
+
+
     def delete(self, request, *args, **kwargs):
-        id = request.data.get('id')
+        id = kwargs.get('id')
         equipment = models.MeetingRoomEquipment.objects.filter(id=id).first()
         if not (id and equipment):
             return Response({
