@@ -44,10 +44,14 @@ class MeetingRoomSerializer(ModelSerializer):
 
     def update(self, instance, validated_data):
         # 将多对多类型的字段先取出来
-        equipment = validated_data.pop('equipment')
+        try:
+            equipment = validated_data.pop('equipment')
+        except KeyError:
+            equipment = None
         for key, value in validated_data.items():
             setattr(instance, key, value)
-        instance.equipment.set(equipment)
+
+        instance.equipment.set(equipment if equipment else "")
         instance.save()
         return instance
 
